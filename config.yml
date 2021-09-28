@@ -5,9 +5,9 @@ engine:                      # Engine settings.
   dir: "./"                  # Directory containing engines, relative to this project.
   name: "chess-engine"    # Binary name of the engine to use.
   protocol: "uci"            # "uci" or "xboard"
-  ponder: true               # Think on opponent's time.
+  ponder: false               # Think on opponent's time.
   polyglot:
-    enabled: false           # Activate polyglot book.
+    enabled: true           # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
         - Goi5.1.bin
@@ -55,7 +55,7 @@ option name Use NNUE type check : false
 #     syzygy: "Syzygy Path"
 #  silence_stderr: false      # some engines (yes you, leela) are very noisy
 
-abort_time: 60               # time to abort a game in seconds when there is no activity
+abort_time: 60000               # time to abort a game in seconds when there is no activity
 fake_think_time: false       # artificially slow down the bot to pretend like it's thinking
 
 challenge:                   # incoming challenges
@@ -80,8 +80,8 @@ challenge:                   # incoming challenges
     - bullet
     - blitz
     - rapid
-#   - classical
-#   - correspondence
+    - classical
+    - correspondence
   modes:                     # game modes to accept
     - casual                 # unrated games
     - rated                  # rated games - must comment if the engine doesn't try to win
